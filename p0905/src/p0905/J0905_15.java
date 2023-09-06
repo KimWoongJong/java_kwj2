@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class J0905_15 {
 
 	public static void main(String[] args) {
-		// 1-100 랜덤숫자를 생성해서 맞추는 프로그램을 구현하시오.
 		Scanner scan = new Scanner(System.in);
 		int ran = (int)(Math.random()*100)+1;
 		int[] arr = new int[10];

@@ -2,10 +2,11 @@ package p0905;
 
 import java.util.Scanner;
 
-public class J0905_11 {
+public class J0905_11_성적폼 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		
 		
 		loop1:while(true) { // 무한반복
 			System.out.println("[ 학생성적 프로그램 ]");
