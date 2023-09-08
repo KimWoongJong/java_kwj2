@@ -1,9 +1,9 @@
-package p0907;
+package p0908;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class J0907_10 {
+public class J0908_01_로또 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
