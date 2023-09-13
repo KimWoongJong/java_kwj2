@@ -29,7 +29,6 @@ public class Deck {
 		return c[random];
 	}
 	
-	
 	void shuffle() {
 		//52 -> 0-51
 		
