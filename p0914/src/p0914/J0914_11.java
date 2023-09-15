@@ -66,67 +66,19 @@ public class J0914_11 {
 			
 			switch(choice) {
 			case 1:
-				System.out.println("[ TV 구매 ]");
-				System.out.println("결제를 진행할까요?(1.예 2.아니오)");
-				choice = scan.nextInt();
-				if(choice==1) {
-					int check = b1.buy(new Tv());
-					if(check==0) break;
-					System.out.println("TV를 구매하셨습니다.");
-					System.out.printf("구매 후 잔액 : %d \n",b1.money);
-					System.out.println();
-				}else {
-					System.out.println("TV 구매를 취소하셨습니다.");
-					System.out.println();
-				}
+				productBuy("TV",b1);
 				break;
 				
 			case 2:
-				System.out.println("[ 컴퓨터 구매 ]");
-				System.out.println("결제를 진행할까요?(1.예 2.아니오)");
-				choice = scan.nextInt();
-				if(choice==1) {
-					int check = b1.buy(new Computer());
-					if(check==0) break;
-					System.out.println("컴퓨터를 구매하셨습니다.");
-					System.out.printf("구매 후 잔액 : %d \n",b1.money);
-					System.out.println();
-				}else {
-					System.out.println("컴퓨터 구매를 취소하셨습니다.");
-					System.out.println();
-				}
+				productBuy("컴퓨터",b1);			
 				break;
 				
 			case 3:
-				System.out.println("[ 오디오 구매 ]");
-				System.out.println("결제를 진행할까요?(1.예 2.아니오)");
-				choice = scan.nextInt();
-				if(choice==1) {
-					int check = b1.buy(new Audio());
-					if(check==0) break;
-					System.out.println("오디오를 구매하셨습니다.");
-					System.out.printf("구매 후 잔액 : %d \n",b1.money);
-					System.out.println();
-				}else {
-					System.out.println("오디오 구매를 취소하셨습니다.");
-					System.out.println();
-				}
+				productBuy("오디오",b1);
 				break;
 				
 			case 4:
-				System.out.println("[ 세탁기 구매 ]");
-				System.out.println("결제를 진행할까요?(1.예 2.아니오)");
-				choice = scan.nextInt();
-				if(choice==1) {
-					int check = b1.buy(new Washing());
-					if(check==0) break;
-					System.out.println("세탁기를 구매하셨습니다.");
-					System.out.printf("구매 후 잔액 : %d \n",b1.money);
-					System.out.println();
-				}else {
-					System.out.println("세탁기 구매를 취소하셨습니다.");
-					System.out.println();
-				}
+				productBuy("세탁기",b1);
 				break;
 				
 			case 5:
@@ -178,7 +130,35 @@ public class J0914_11 {
 			
 		}//while
 		
-		
 	}//main
+	
+	// 리턴타입 void-리턴타입이 없음. 매개변수 - 2개
+	static void productBuy(String pName,Buyer b1) {
+		Scanner scan = new Scanner(System.in);
+		System.out.printf("[ %s 구매 ]\n",pName);
+		System.out.println("결제를 진행할까요?(1.예 2.아니오)");
+		int choice = scan.nextInt();
+		if(choice==1) {
+			int check = 0;
+			
+			if(pName.equals("TV"))
+				check = b1.buy(new Tv());
+			else if(pName.equals("컴퓨터"))
+				check = b1.buy(new Computer());
+			else if(pName.equals("오디오"))
+				check = b1.buy(new Audio());
+			else if(pName.equals("세탁기"))
+				check = b1.buy(new Washing());
+				
+			
+			if(check==0) return;
+			System.out.printf("%s를 구매하셨습니다.",pName);
+			System.out.printf("구매 후 잔액 : %,d \n",b1.money);
+			System.out.println();
+		}else {
+			System.out.printf("%s 구매를 취소하셨습니다.",pName);
+			System.out.println();
+		}
+	}//productBuy
 
 }//class
