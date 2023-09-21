@@ -45,6 +45,7 @@ public class J0920_15 {
 		}
 		
 		System.out.printf("%d, %d, %d",minNo,midNo,maxNo);
+		System.out.println();
 		
 		
 		// 세개 숫자 입력받아서 크기 비교 - 혼자 해결해보기 도전
